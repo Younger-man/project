@@ -5,12 +5,13 @@
 "use strict";
 /*
  * @param  a arary
- * @param  b arary a µÄÆğÊ¼ÏÂ±ê
- * @param  c arary a µÄ½áÊøÏÂ±ê
+ * @param  b arary a çš„èµ·å§‹ä¸‹æ ‡
+ * @param  c arary a çš„ç»“æŸä¸‹æ ‡
  *
- * */
+ *
+ */
 var exchange = function(a,b,c){
-    //todo ½»»» a[b] Óë a[c] µÄÎ»ÖÃ
+    //todo äº¤æ¢ a[b] ä¸ a[c] çš„ä½ç½®
     var num = a[b];
     a[b] = a[c];
     a[c] = num;
@@ -19,13 +20,13 @@ var exchange = function(a,b,c){
 
 /*
 * @param  a arary
-* @param  p arary a µÄÆğÊ¼ÏÂ±ê
-* @param  p arary a µÄ½áÊøÏÂ±ê
-* */
-var partion = function(a,p,r){
-    //todo µ¥´ÎÅÅĞò½á¹û
-    var x = a[r]; // Êı×éµÄ×îºóÒ»¸öÔªËØÎªÖ÷ÔªËØ
-    var q = p -1 ;    //q Ö¸Ïò±ÈÖ÷ÔªËØĞ¡µÄÔªËØÎ»ÖÃ
+* @param  p arary a çš„èµ·å§‹ä¸‹æ ‡
+* @param  p arary a çš„ç»“æŸä¸‹æ ‡
+*/
+var getPartion = function(a,p,r){
+    //todo å•æ¬¡æ’åºç»“æœ
+    var x = a[r]; // æ•°ç»„çš„æœ€åä¸€ä¸ªå…ƒç´ ä¸ºä¸»å…ƒç´ 
+    var q = p -1 ;    //q æŒ‡å‘æ¯”ä¸»å…ƒç´ å°çš„å…ƒç´ ä½ç½®
 
     for(var i=p;i<r;i++){
         if(a[i]<a[r]||a[i]==a[r]){
@@ -39,14 +40,14 @@ var partion = function(a,p,r){
 
 }
 /*
-* @prama a : ĞèÒªÅÅĞòµÄÊı×é
-* @prama p :Êı×éµÄÆğÊ¼ÏÂ±ê
-* @prama r :Êı×éµÄ½áÊøÏÂ±ê
-* */
+* @prama a : éœ€è¦æ’åºçš„æ•°ç»„
+* @prama p :æ•°ç»„çš„èµ·å§‹ä¸‹æ ‡
+* @prama r :æ•°ç»„çš„ç»“æŸä¸‹æ ‡
+*/
 var quicksort = function (a,p,r){
-    //todo ¿ìËÙÅÅĞò
+    //todo å¿«é€Ÿæ’åº
     if(p<r){
-        var q=partion(a,p,r);
+        var q=getPartion(a,p,r);
         quicksort(a,p,q-1);
         quicksort(a,q+1,r);
     }
